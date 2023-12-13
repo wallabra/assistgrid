@@ -1,0 +1,8 @@
+[package]
+name = "assistgrid"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.12.1"
+vector2d = "2.2.0"
