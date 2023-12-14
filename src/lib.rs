@@ -4,10 +4,12 @@ use vector2d::Vector2D as Vec2;
 pub mod item;
 pub mod living;
 pub mod physics;
+pub mod world;
 
 use item::ItemTypes;
 use living::Physiology;
 use physics::Movement;
+use world::World;
 
 #[derive(Component)]
 pub struct Name(String);
@@ -45,6 +47,10 @@ pub fn initial_people(mut commands: Commands, itemtypes: Res<ItemTypes>) {
 
 pub fn initial_friction<const FRICTION: i64>(mut commands: Commands) {
     commands.insert_resource(WorldFriction((FRICTION as f64) / 128.0));
+}
+
+pub fn initial_world(mut commands: Commands) {
+    commands.init_resource::<World>();
 }
 
 pub fn initial_item_types(mut commands: Commands) {
