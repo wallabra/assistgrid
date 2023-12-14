@@ -1,3 +1,5 @@
+use bevy::prelude::*;
+
 pub struct ItemType {
     pub name: String,
     pub tags: Vec<String>,
@@ -29,6 +31,7 @@ impl Item {
     }
 }
 
+#[derive(Component)]
 pub struct Inventory(Vec<Item>);
 
 impl Inventory {
@@ -97,6 +100,7 @@ impl Recipe {
     }
 }
 
+#[derive(Resource)]
 pub struct ItemTypes {
     pub types: Vec<ItemType>,
     pub recipes: Vec<Recipe>,
